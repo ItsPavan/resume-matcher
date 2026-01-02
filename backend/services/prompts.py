@@ -13,10 +13,13 @@ SCORING_PROMPT = PromptTemplate(
     
     Task:
     1. Analyze the resume against the job description.
-    2. Provide a match score from 0 to 100.
-    3. List missing critical skills.
-    4. List matching skills found.
-    5. Provide 3 concrete suggestions to improve the resume for this specific role.
+    Output Format (JSON):
+    {{
+        "score": <number>,
+        "missing_skills": [<list of strings>],
+        "matching_skills": [<list of strings>],
+        "suggestions": [<list of strings>]
+    }}
     
     {format_instructions}
     
@@ -25,12 +28,6 @@ SCORING_PROMPT = PromptTemplate(
 )
 
 REWRITE_PROMPT = PromptTemplate(
-    input_variables=["resume", "jd", "feedback"],
-    template="""
-    You are an expert Resume Writer.
-    
-    Job Description:
-    {jd}
     
     Original Resume:
     {resume}

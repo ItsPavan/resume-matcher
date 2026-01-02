@@ -1,0 +1,73 @@
+.diff-viewer {
+    text-align: left;
+    margin-top: 2rem;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.diff-container {
+    font-family: monospace;
+    white-space: pre-wrap;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+}
+
+.diff-chunk {
+    margin: 1rem 0;
+    padding: 1rem;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid transparent;
+}
+
+.diff-chunk.added {
+    background: rgba(0, 255, 0, 0.1);
+    border-color: rgba(0, 255, 0, 0.3);
+}
+
+.diff-chunk.removed {
+    background: rgba(255, 0, 0, 0.1);
+    border-color: rgba(255, 0, 0, 0.3);
+}
+
+.diff-chunk.accept {
+    opacity: 1;
+    /* Confirmed */
+    border: 2px solid limegreen;
+}
+
+.diff-chunk.reject {
+    opacity: 0.5;
+    /* Dimmed */
+    filter: grayscale(0.8);
+}
+
+.diff-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.btn-accept {
+    background: #2e7d32;
+    font-size: 0.8rem;
+}
+
+.btn-reject {
+    background: #c62828;
+    font-size: 0.8rem;
+}
+
+.btn-finalize {
+    width: 100%;
+    margin-top: 1rem;
+    background: var(--primary);
+    font-size: 1.2rem;
+}
+
+pre {
+    margin: 0;
+    white-space: pre-wrap;
+}
